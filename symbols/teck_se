@@ -1,0 +1,161 @@
+default alphanumeric_keys modifier_keys xkb_symbols "teck" {
+
+    key <INS>  {[    Insert                ]};
+    include "srvr_ctrl(fkey2vt)" // F1-F12
+    key <PRSC> {[    Print                 ]};
+
+    key <CAPS> {[    Caps_Lock             ]};
+    key <SCLK> {[    Pointer_EnableKeys    ]};
+
+
+
+    key <KPAD> {[    VoidSymbol                                             ]};
+    key <KP0>  {[    Menu                                                   ]};
+    key <KP5>  {[    ISO_Level3_Shift                                       ]};
+    key <LALT> {[    Alt_L                                                  ]};
+    key <LCTL> {[    Control_L                                              ]};
+    key <LFSH> {[    Shift_L                                                ]};
+    key <LWIN> {[    Super_L                                                ]};
+
+    key <RWIN> {[    Super_R                                                ]};
+    key <RTSH> {[    Shift_R                                                ]};
+    key <RCTL> {[    Control_R                                              ]};
+    key <RALT> {[    Alt_R                                                  ]};
+    key <AD11> {[    aring                 ,  Aring                         ]};
+    key <KP2>  {[    F14                                                    ]};
+    key <KPSU> {[    VoidSymbol                                             ]};
+
+
+
+    key <AE12> {[    eacute                ,  Eacute                        ]};
+    key <KPDL> {[    rightdoublequotemark  ,  leftdoublequotemark           ]};
+    key <AD01> {[    q                     ,  Q                             ]};
+    key <AC09> {[    l                     ,  L                             ]};
+    key <AD07> {[    u                     ,  U                             ]};
+    key <AB03> {[    c                     ,  C                             ]};
+    key <AC07> {[    j                     ,  J                             ]};
+
+    key <AC08> {[    k                     ,  K                             ]};
+    key <AD10> {[    p                     ,  P           ,  F7   ,  F7     ]};
+    key <AB07> {[    m                     ,  M           ,  F8   ,  F8     ]};
+    key <AD02> {[    w                     ,  W           ,  F9   ,  F9     ]};
+    key <AB10> {[    minus                 ,  underscore  ,  F12  ,  F12    ]};
+    key <KP4>  {[    rightsinglequotemark  ,  leftsinglequotemark           ]};
+    key <KP6>  {[    VoidSymbol                                             ]};
+
+
+
+    key <TAB>  {[    Tab                   ,  ISO_Left_Tab                  ]};
+    key <AC01> {[    a                     ,  A                             ]};
+    key <AB06> {[    n                     ,  N                             ]};
+    key <AD08> {[    i                     ,  I                             ]};
+    key <AC02> {[    s                     ,  S                             ]};
+    key <AB04> {[    v                     ,  V                             ]};
+
+    key <AB05> {[    b                     ,  B                             ]};
+    key <AC06> {[    h                     ,  H           ,  F4   ,  F4     ]};
+    key <AD05> {[    t                     ,  T           ,  F5   ,  F5     ]};
+    key <AD04> {[    r                     ,  R           ,  F6   ,  F6     ]};
+    key <AD09> {[    o                     ,  O           ,  F11  ,  F11    ]};
+    key <ESC>  {[    Escape                ,  Escape                        ]};
+
+
+
+    key <AC11> {[    adiaeresis            ,  Adiaeresis                    ]};
+    key <KPDV> {[    slash                 ,  backslash                     ]};
+    key <TLDE> {[    colon                 ,  semicolon                     ]};
+    key <AD06> {[    y                     ,  Y                             ]};
+    key <AC05> {[    g                     ,  G                             ]};
+    key <AB02> {[    x                     ,  X                             ]};
+
+    key <AB01> {[    z                     ,  Z                             ]};
+    key <AC04> {[    f                     ,  F           ,  F1   ,  F1     ]};
+    key <AC03> {[    d                     ,  D           ,  F2   ,  F2     ]};
+    key <AB09> {[    period                ,  question    ,  F3   ,  F3     ]};
+    key <AB08> {[    comma                 ,  exclam      ,  F10  ,  F10    ]};
+    key <AC10> {[    odiaeresis            ,  Odiaeresis                    ]};
+
+
+
+    key <KPEN> {[    F13          ]};
+    key <PAUS> {[    Multi_key    ]};
+    key <DELE> {[    Delete       ]};
+    key <BKSP> {[    BackSpace    ]};
+
+
+
+    key <KP7>  {[    Home         ]};
+    key <KP1>  {[    End          ]};
+    key <KP9>  {[    Prior        ]};
+    key <KP3>  {[    Next         ]};
+
+    key <AD03> {[    e , E        ]};
+    key <RTRN> {[    Return       ]};
+    key <SPCE> {[    space        ]};
+
+    key <LEFT> {[    Left         ]};
+    key <RGHT> {[    Right        ]};
+    key <UP>   {[    Up           ]};
+    key <DOWN> {[    Down         ]};
+
+
+
+    key <LSGT> {[    less          ,  greater     ,  bar             ]};
+    key <HNGL> {[    greater                                         ]};
+    key <HJCV> {[    braceleft                                       ]};
+    key <KATA> {[    braceright                                      ]};
+    key <HIRA> {[    asterisk                                        ]};
+
+    key <KP8>  {[    numbersign                                      ]};
+    key <AE07> {[    7             ,  slash       ,  braceleft       ]};
+    key <AE08> {[    8             ,  parenleft   ,  bracketleft     ]};
+    key <AE09> {[    9             ,  parenright  ,  bracketright    ]};
+    key <PGUP> {[    asciicircum                                     ]};
+
+
+
+    key <HOME> {[    ampersand                                       ]};
+    key <FK13> {[    bracketleft                                     ]};
+    key <FK14> {[    bracketright                                    ]};
+    key <FK15> {[    parenleft                                       ]};
+    key <FK16> {[    parenright                                      ]};
+    key <AD12> {[    at            ,  asciicircum ,  asciitilde      ]};
+
+    key <AE11> {[    plus          ,  question    ,  backslash       ]};
+    key <AE04> {[    4             ,  currency    ,  dollar          ]};
+    key <AE05> {[    5             ,  percent     ,  EuroSign        ]};
+    key <AE06> {[    6             ,  ampersand                      ]};
+    key <KPEQ> {[    equal                                           ]};
+    key <END>  {[    bar                                             ]};
+
+
+
+    key <FK17> {[    asciitilde                                      ]};
+    key <FK18> {[    grave                                           ]};
+    key <BKSL> {[    apostrophe    ,  asterisk                       ]};
+    key <FK19> {[    quotedbl                                        ]};
+    key <AE13> {[    emdash                                          ]};
+
+    key <KPMU> {[    endash        ,  emdash                         ]};
+    key <AE01> {[    1             ,  exclam      ,  grave           ]};
+    key <AE02> {[    2             ,  quotedbl    ,  at              ]};
+    key <AE03> {[    3             ,  numbersign  ,  sterling        ]};
+    key <PGDN> {[    percent                                         ]};
+
+
+
+    key <AB11> {[    dollar                                          ]};
+    key <AE10> {[    0             ,  equal       ,  braceright      ]};
+
+
+
+    key <MENU> {[    ISO_Level3_Shift      ]};
+
+    modifier_map Shift   { Shift_L, Shift_R     };
+    modifier_map Lock    { Caps_Lock, ISO_Lock  };
+    modifier_map Control { Control_L, Control_R };
+    modifier_map Mod1	 { Alt_L, Alt_R         };
+    modifier_map Mod4    { Super_L, Super_R     };
+    modifier_map Mod5    { ISO_Level3_Shift     };
+
+};

@@ -1,0 +1,7 @@
+xkb_keymap {
+	xkb_keycodes  { include "evdev"	};
+	xkb_types     { include "complete"	};
+	xkb_compat    { include "teck_mousekeys+complete"	};
+	xkb_symbols   { include "teck_se+terminate(ctrl_alt_bksp)"	};
+	xkb_geometry  { include "pc(pc105)"	};
+};
