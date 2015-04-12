@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/lydell/keyboard/teck_se
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+X-GNOME-Autostart-Delay=1
+Name=teck_se
+Comment=

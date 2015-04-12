@@ -1,0 +1,3 @@
+#!/bin/bash
+dir=$(dirname $BASH_SOURCE)
+xkbcomp "-I$dir" "$dir/teck_se.xkb" $DISPLAY &>/dev/null

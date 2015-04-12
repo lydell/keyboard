@@ -211,21 +211,13 @@ Upgrade your Truly Ergonomic Keyboard with the firmware in `teck_se.hex`. That
 file was generated using the layout designer on Truly Ergonomic’s website.
 There is a URL to it in `teck_se.url`.
 
-To use the layout, run the following command (assuming the project root is
-`$DIR`):
+To use the layout, run the `teck_se` file.
 
-       xkbcomp -I$DIR $DIR/teck_se.xkb $DISPLAY
-
-You can autorun that command when logging in. It appears that you need to
-re-run it when you connect a new keyboard, though.
-
-Note:
-
-- There should _not_ be any space after `-I`!
-- Using `~` for your home dir and/or $DISPLAY instead of `:0.0` does not
- seem to work when autorunning. Try for example the following instead:
-
-    xkbcomp -I/home/lydell/keyboard /home/lydell/keyboard/teck_se.xkb :0.0
+You can autorun that file when logging in. It appears that you need to re-run
+it when you connect a new keyboard, though. At least on Trisquel and Ubuntu
+(and likely any system using Gnome), you can copy teck_se.desktop to
+~/.config/autostart. You need to adjust the path to teck_se in that file first,
+though. You might also need to adjust the delay in it.
 
 Run `setxkbmap` to return to your regular layout.
 
