@@ -9,7 +9,7 @@ of inspiration to someone.
      ◰  men f*  alt ctl sft sup f13 sup sft ctl alt  å  f14  ◳
      é  ”“  <q  >l  {u  }c  *j  cmp #k  7p  8m  9w  ^-_  ’‘  ◲
     tab═&══ >a  ]n  (i  )s  @v  del +b  4h  5t  6r  =o  |═══esc
-    ═══ä═══ ~/\ `:; 'y  "g  —x  bs  –z  1f  2d  3.? %,! ═══ö═══
+    ═══ä═══ ~/\ `?! 'y  "g  —x  bs  –z  1f  2d  3.: %,; ═══ö═══
     ══agr══ ↞←  ↡↓  ↠→  ══$e═══ ent ══0␣═══ ↞←  ↟↑  ↠→  ══agr══
                 ↟↑                              ↡↓
 
@@ -140,11 +140,14 @@ on the same hand is close to impossible.
 
 Another thing that always bothered me was that typing `?` and `!` was so
 different. They both end a sentence just like a period, in two special ways.
-Especially the `!` was in such a bad position (`shift+1`). Therefore I put them
-on the period and comma, where they feel more like they belong.
-
-I’ve never had a problem with having colon and semi-colon on the same key, so I
-kept that. However, I use colons way more than semi-colons, so I swapped them.
+Especially the `!` was in such a bad position (`shift+1`). Initially I put them
+on the period and comma, where they feel more like they belong, but in the end
+I put both of them on their own key, and kept colon on period and semi-colon on
+comma, just like in the Swedish QWERTY layout. I’ve never had a problem with
+that, and it is acutally a quite logical arrangement. Putting `?` and `!` is
+also quite logical. The biggest reason, though, is that it makes it easier for
+me to switch between a regular keyboard with the Swedish QWERTY layout and the
+TECK.
 
 I also decided to put “real,” typographic quotes in the main layer, while
 keeping the standard, straight ones (some call them dumb) in the symbol layer
@@ -208,13 +211,13 @@ Upgrade your Truly Ergonomic Keyboard with the firmware in `teck_se.hex`. That
 file was generated using the layout designer on Truly Ergonomic’s website.
 There is a URL to it in `teck_se.url`.
 
-To try out the layout you can run the following command (assuming the project
-root is `$DIR`):
+To use the layout, run the following command (assuming the project root is
+`$DIR`):
 
        xkbcomp -I$DIR $DIR/teck_se.xkb $DISPLAY
 
-You can autorun that command when logging in, if you don’t want to “install”
-the layout.
+You can autorun that command when logging in. It appears that you need to
+re-run it when you connect a new keyboard, though.
 
 Note:
 
@@ -226,18 +229,14 @@ Note:
 
 Run `setxkbmap` to return to your regular layout.
 
-If you want to use the layout in the login screen as well, and don’t want to
-worry about autorunning commands, run `install.sh`. See its commented source
-for more information.
+I don’t know a good way to use the layout in the login screen. That’s not
+important for me though.
 
-Using the `xkbcomp` command is convenient when hacking on the layout. Make a
-change, run the command, test! If you have installed the layout you can simply
-run `setxkbmap` instead.
-
-All of the above at least _used_ to be true. However, during the rather long
-time I’ve hacked on the layout, things seem to have changed. Lately it seems
-like only the `install.sh` variant works properly—and only after logging out and
-in again. Sigh. Keyboards suck :)
+When I first made this XKB layout, I autoran the about command, and it worked
+great. After a while, it didn’t. Then I came up with a different (and a bit
+more complex) installation method. When I upgraded my operating system, though,
+that method stopped working, and the original method started working again.
+Odd.
 
 
 [anishtro]: https://github.com/lydell/anishtro

@@ -27,6 +27,7 @@ The following keys have special meaning:
 - cl: Caps Lock
 - ml: Mouse Lock
 - ql: QWERTY Lock
+- nl: Num Lock
 - f1–f14: F1–F14
 - ←: Left Arrow
 - →: Right Arrow
@@ -46,8 +47,7 @@ The following keys have special meaning:
 
 The f\* key should be held to activate the f\* layer.
 
-The ◰ ◳ ◲ keys are unused. Those specific characters were chosen to show how the
-TECK layout maps to the laptop layout.
+The ◰ ◳ ◲ keys are unused.
 
 Note: The AltGr keys in the TECK layout aren’t actually AltGr keys; they’re the
 special fn layer key of the TECK. The “fn” key in the laptop layout is a special

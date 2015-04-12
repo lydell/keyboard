@@ -3,34 +3,22 @@ or useful to anyone else.
 
 The laptop layout:
 
-    esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 prt cmp ins del      /\  –—
-     :; `1! @2" £3# $4¤ €5%  6& {7/ [8( ]9) }0= \+?  é  ══bs══  ”“  ◰   ◳
-    ═tab  q   w   e   r   t   y   u   i   o   p   å  ~@^ ═╦ent  ↞   #   ↠
-    ═cl══  a   s   d   f   g   h   j   k   l   ö   ä   '* ╚══╝  ’‘ f*   ◲
-    sft |<>  z   x   c   v   b   n   m   ,!  .?  -_ ════sft═══  ↟  f14  ↡
-    ctl fn  sup alt ═════════␣═════════ alt agr ctl ←  ↑  ↓  → men ══f13══
+    esc f1  f2  f3  f4   f5  f6  f7  f8   f9  f10 f11 f12 prt del
+     é   1! @2" £3# $4¤ €5%  6& {7/ [8( ]9) }0= \+?  `´ ══bs═  ↞ (cmp)
+    ═tab  q   w  €e   r   t   y   u   i   o   p   å  ~–^ ═ent  ↠
+    ═cl══  a   s   d   f   g   h   j   k   l   ö   ä   '* ╚═╝  ↟
+    sft |<>  z   x   c   v   b   n   m   ,;  .:  -_ ═sft═  ↑   ↡ (ins)
+    ctl fn  sup alt ═════════␣═════════ agr men ═ctl═  ←   ↓   →
 
-é is where the dead acute would have been (é is the only time I use acute).
+The two words in parentheses to the right are keys that are in the fn layer of
+the laptop.
 
-’‘ is on the same row as ', and ”“ is one the same row as ", which is one way of
-remembering them.
+é replaces the useless §½ key. Since ´ is no longer dead, another way to easily
+input é is needed. This specific key is very similar in location compared to
+the TECK layout.
 
-:; should ideally have been on . and , just like the standard Swedish layout,
-but I didn’t manage to. The :; had to go somewhere. At least its on the same
-hand as on the TECK.
-
-I took the liberty to add a second alt key, because it always drives me insane
-only having one. I wanted a second altgr key, too, but you can’t get it all. It
-doesn’t matter that the second alt key pushed the altgr key to a worse
-position—it sucks anyway. At least I’m able to type symbols on the laptop
-keyboard.
-
-The §½ key is missing in my layout, but I don’t care. Such a weird key. So is
-the dead '\` key. I’ll use the é key and the compose key instead. \` is also
-present on altgr-1, close to the en-US position, for programming.
-
-The key to the right of å just happens to @. No particular reason. I don’t miss
-the default " diaresis.
+The key to the right of å is en dash. The default " diaresis is useless; the en
+dash is not.
 
 The reason I use the TECK’s function layer for the symbol layer instead of AltGr
 is that it is more reliable. Some programs don’t recognize keyboard shortcuts
@@ -47,9 +35,25 @@ putting _some_ (any) keys there, and then rebind them with software.
 
 It turned out that there weren’t that many spare keys to put in it. Some (such
 as high F\* keys) I wasn’t able to rebind in XKB. This meant that I had to
-sacrifice the Numpad keys. I dont’t have a numpad on the TECK anyway, but on my
-laptop keyboard I do. However, most of the time I flip Num Lock on the laptop
-keyboard in order to acces Home and End.
+sacrifice the Numpad keys. I don’t have a numpad on neither the TECK nor the
+laptop anyway. However, if I ever connect a regular keyboard with a numpad, I
+made sure that the numpad could be at least potentially useful:
+
+    nl   /   *   ”“
+     {   }   ^  ╔═╗
+     (   )   |  ╚’‘
+     [   ]   %  ╔═╗
+    ═══$═══ f14 f13
+
+’‘ is on the same row as ', and ”“ is one the same row as ", which is one way of
+remembering them.
+
+/ is / and \* is \* just because that makes / and \* work out-of-the-box on the
+TECK if I connected to any other computer.
+
+0–9 are symbols. I made sure to put all parentheses there, since they suck to
+type on a Swedish keyboard. The remaining three symbols are the three
+right-most symbols in the TECK symbol layer, from top to bottom.
 
 I wanted both my TECK and my laptop keyboard to just work. I didn’t want to
 switch layout each time I switched keyboard. I also wanted to be able to type on
@@ -60,3 +64,18 @@ login screen…
 In previous attempts, I tried to change as little as possible in the firmware,
 and do the most in XKB. Now, however, I try to do as much as possible in the
 firmware.
+
+In an earlier version, I took the liberty to add a second alt key, because it
+always drives me insane only having one. However, now I’ve opted for making all
+keys do exactly what their labels say. That’s because it has become important
+for me that other people can use the laptop keyboard as well. The only
+differences are:
+
+- The §½ key. Almost nobody ever use that key anyway, so it doesn’t matter.
+- The ´` key. The two characters have been swapped. Moreover, they are no
+  longer dead keys. I think that’s acceptable. People usually only use the dead
+  acute accent to type é.
+- The ^"~ (diaresis) key. Almost nobody ever use the dead diaresis. Moreover,
+  the keys are no longer dead. I think that’s acceptable, too. People usually
+  only use those symbols on their own, and almost never to put them above other
+  letters.

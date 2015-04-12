@@ -1,6 +1,0 @@
-
-! layout = symbols
-  se     = teck_se
-
-! layout = compat
-  se     = teck_mousekeys+complete
