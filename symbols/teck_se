@@ -151,12 +151,12 @@ default alphanumeric_keys modifier_keys xkb_symbols "teck" {
 
     // Required to make the Alt and Super modifiers work (!).
     key <NMLK> {[    Num_Lock    ]};
+    modifier_map Mod2    { Num_Lock             };
 
     modifier_map Shift   { Shift_L, Shift_R     };
     modifier_map Lock    { Caps_Lock, ISO_Lock  };
     modifier_map Control { Control_L, Control_R };
     modifier_map Mod1	 { Alt_L, Alt_R         };
-    modifier_map Mod2    { Num_Lock             };
     modifier_map Mod4    { Super_L, Super_R     };
     modifier_map Mod5    { ISO_Level3_Shift     };
 

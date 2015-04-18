@@ -213,11 +213,10 @@ There is a URL to it in `teck_se.url`.
 
 To use the layout, run the `teck_se` file.
 
-You can autorun that file when logging in. It appears that you need to re-run
-it when you connect a new keyboard, though. At least on Trisquel and Ubuntu
-(and likely any system using Gnome), you can copy teck_se.desktop to
-~/.config/autostart. You need to adjust the path to teck_se in that file first,
-though. You might also need to adjust the delay in it.
+You can autorun that file when logging in. If you’re using Gnome, you can copy
+`teck_se.desktop` into `~/.config/autostart`. You need to adjust the path to
+`teck_se` in that file first, though. You might also need to adjust the delay
+in it.
 
 Run `setxkbmap` to return to your regular layout.
 
@@ -229,6 +228,23 @@ great. After a while, it didn’t. Then I came up with a different (and a bit
 more complex) installation method. When I upgraded my operating system, though,
 that method stopped working, and the original method started working again.
 Odd.
+
+A note about Num Lock and plugging in and out the TECK
+------------------------------------------------------
+
+The new firmware adds numpad keys here and there. The XKB layout then remaps
+those to symbols and such. When pressing such keys, the TECK might send both
+the desired key and Num Lock. That extra Num Lock usually makes no difference,
+but it might break some keyboard shortcuts. If you’re using Gnome, here’s how
+you can prevent the TECK from sending that extra Num Lock.
+
+1. Run `gsettings set org.gnome.settings-daemon.peripherals.keyboard numlock-state on`.
+2. Log out and log in again.
+
+If you plug the TECK in after you have logged in, it doesn’t matter if you have
+autorun `teck_se` when logging in. It will have no effect. Then you either need
+to run `teck_se` again, or log out and log in. The latter option is better,
+because otherwise the TECK will start to send that extra Num Lock.
 
 
 [anishtro]: https://github.com/lydell/anishtro
