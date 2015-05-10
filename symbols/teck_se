@@ -148,10 +148,6 @@ default alphanumeric_keys modifier_keys xkb_symbols "teck" {
     key <AE10> {[    0             ,  equal        ,  braceright      ]};
 
 
-    key <FK21> {[F21]};
-    key <FK22> {[F22]};
-    key <FK23> {[F23]};
-
 
     // Required to make the Alt and Super modifiers work (!).
     key <NMLK>           {[Num_Lock            ]};
