@@ -5,76 +5,76 @@ default partial xkb_compatibility "mousekeys" {
 
 
     interpret f {
-	action = MovePtr(x=-1,y=+1);
+        action = MovePtr(x=-1,y=+1);
     };
 
     interpret d {
-	action = MovePtr(x=+0,y=+1);
+        action = MovePtr(x=+0,y=+1);
     };
 
     interpret period {
-	action = MovePtr(x=+1,y=+1);
+        action = MovePtr(x=+1,y=+1);
     };
 
     interpret h {
-	action = MovePtr(x=-1,y=+0);
+        action = MovePtr(x=-1,y=+0);
     };
 
     interpret r {
-	action = MovePtr(x=+1,y=+0);
+        action = MovePtr(x=+1,y=+0);
     };
 
     interpret p {
-	action = MovePtr(x=-1,y=-1);
+        action = MovePtr(x=-1,y=-1);
     };
 
     interpret m {
-	action = MovePtr(x=+0,y=-1);
+        action = MovePtr(x=+0,y=-1);
     };
 
     interpret w {
-	action = MovePtr(x=+1,y=-1);
+        action = MovePtr(x=+1,y=-1);
     };
 
 
 
     interpret t {
-	action = PointerButton(button=default);
+        action = PointerButton(button=default);
     };
 
     interpret o {
-	action = PointerButton(button=3);
+        action = PointerButton(button=3);
     };
 
     interpret space {
-	action = PointerButton(button=default,count=2);
+        action = PointerButton(button=default,count=2);
     };
 
     interpret k {
-	action = SetPtrDflt(affect=defaultButton,button=3);
+        action = SetPtrDflt(affect=defaultButton,button=3);
     };
 
     interpret b {
-	action = SetPtrDflt(affect=defaultButton,button=2);
+        action = SetPtrDflt(affect=defaultButton,button=2);
     };
 
     interpret z {
-	action = SetPtrDflt(affect=defaultButton,button=1);
+        action = SetPtrDflt(affect=defaultButton,button=1);
     };
 
     interpret minus {
-	action = LockPointerButton(button=default,affect=lock);
+        action = LockPointerButton(button=default,affect=lock);
     };
 
     interpret comma {
-	action = LockPointerButton(button=default,affect=unlock);
+        action = LockPointerButton(button=default,affect=unlock);
     };
 
 
 
     indicator "Scroll Lock" {
-	indicatorDrivesKeyboard;
-	controls= MouseKeys;
+        indicatorDrivesKeyboard;
+        controls= MouseKeys;
     };
 
 };
