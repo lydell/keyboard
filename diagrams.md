@@ -25,10 +25,9 @@ The following keys have special meaning:
 - sft: Shift
 - sup: Super
 - cl: Caps Lock
-- ml: Mouse Lock
 - ql: QWERTY Lock
 - nl: Num Lock
-- f1–f14: F1–F14
+- f1–f13: F1–F13
 - ←: Left Arrow
 - →: Right Arrow
 - ↑: Up Arrow
@@ -37,19 +36,19 @@ The following keys have special meaning:
 - ↠: End
 - ↟: Page Up
 - ↡: Page Down
-- ↖ ↑ ↗ ← → ↙ ↓ ↘: Move the mouse pointer in the indicated direction.
-- ×·· ·×· ··×: Select left, middle or right mouse button, respectively.
-- ➀: Click using the selected mouse button.
-- ➁: Double-click using the selected mouse button.
-- ❶: Right-click.
-- ↧: Hold selected mouse button.
-- ↥: Release selected mouse button.
-
-The f\* key should be held to activate the f\* layer.
-
-The ◰ ◳ ◲ keys are unused.
 
 Note: The AltGr keys in the TECK layout aren’t actually AltGr keys; they’re the
 special fn layer key of the TECK. The “fn” key in the laptop layout is a special
 laptop fn key, though. To make things really confusing, the f\* key is actually
 an AltGr key.
+
+Also note that this compact notation is not able to truly represent some updates
+I made to the layout:
+
+- The Print Screen key is actually in the AltGr layer since I don’t use it very
+  often and sometimes hit it by mistake. For consistency, I moved the Insert key
+  to the AltGr layer as well. (Both of those keys are empty in the main layer.)
+- The ”“ and ’‘ keys have F6 and F12 in the AltGr layer, respectively. Those are
+  the F keys I use the most. (I used to have an F layer, but sadly I couldn’t
+  get it to work in Ubuntu 17.10. Similarly, I used to have a mouse keys layer,
+  and had to scrap that as well, but luckily I never used it.)

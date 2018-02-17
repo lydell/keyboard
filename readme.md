@@ -1,26 +1,19 @@
 Overview
 ========
 
-This is my personal keyboard layout. It is made for the TECK. I hope it may be
-of inspiration to someone.
+This is my personal keyboard layout. It is made for the TECK (“Truly Ergonomic
+Keyboard”). I hope it may be of inspiration to someone.
 
-    ins f1  f2  f3  f4    f5  f6  f7  f8    f9  f10 f11 f12 prt
-                            cl  ml  ql
-     ◰  men f*  alt ctl sft sup f13 sup sft ctl alt  å  f14  ◳
-     é  ”“  <q  >l  {u  }c  *j  cmp #k  7p  8m  9w  ^-_  ’‘  ◲
-    tab═&══ >a  ]n  (i  )s  @v  del +b  4h  5t  6r  =o  |═══esc
-    ═══ä═══ ~/\ `?! 'y  "g  —x  bs  –z  1f  2d  3.: %,; ═══ö═══
-    ══agr══ ↞←  ↡↓  ↠→  ══$e═══ ent ══0␣═══ ↞←  ↟↑  ↠→  ══agr══
-                ↟↑                              ↡↓
-
-                      Mouse Lock:   ··×  ↖   ↑   ↗   ↧
-                                    ·×·  ←   ➀   →   ❶
-                                    ×··  ↙   ↓   ↘   ↥
-                                    ═══➁═══
-
-                      f* layer:         f7  f8  f9  f12
-                                        f4  f5  f6  f11
-                                        f1  f2  f3  f10
+```
+ins f1  f2  f3  f4    f5  f6  f7  f8    f9  f10 f11 f12 prt
+                        cl      ql
+ ↞  men  é  alt ctl sft sup f13 sup sft ctl alt  å  men  ↟
+ ↠  ”“  <q  >l  {u  }c  *j  cmp #k  7p  8m  9w  ^-_  ’‘  ↡
+tab═&══ >a  ]n  (i  )s  @v  del +b  4h  5t  6r  =o  |═══esc
+═══ä═══ ~/\ `?! 'y  "g  —x  bs  –z  1f  2d  3.: %,; ═══ö═══
+══agr══ ↞←  ↡↓  ↠→  ══$e═══ ent ══0␣═══ ↞←  ↟↑  ↠→  ══agr══
+            ↟↑                              ↡↓
+```
 
 ([How to read the above diagram.](diagrams.md))
 
@@ -112,7 +105,7 @@ not in charge of the coding style of projects. Some prefer single-quotes, some
 double-quotes. Sometimes they have different semantics. The difficulty of typing
 them should not be an argument when choosing between the two.
 
-Some symbols were very convienient to put on the same side as the numbers, such
+Some symbols were very convenient to put on the same side as the numbers, such
 as `# + – %`. The rest I simply tried to rank how much I type them, giving the
 less frequently used worse positions. `$` was given one of the best
 positions—the left thumb. If you program a lot of bash scripts, php, JavaScript
@@ -154,26 +147,6 @@ keeping the standard, straight ones (some call them dumb) in the symbol layer
 for programming reasons.
 
 
-Function key layer
-------------------
-
-I bought a TECK with blank key caps. Why? I knew that I wanted to rebind all (or
-most) keys, so the labels would be out of sync anyway. Moreover, I touch type.
-Why have labels if you don’t look at them? Lastly, it just super stylish and
-very hackerish.
-
-The only drawback is the keys that I do not touch type: The function keys. They
-are too far away from the home keys to find by touch (at least for me). Many
-times I’ve ended up counting them from the left to find that pesky F7.
-
-In the previous section, I made it really easy to type numbers. Why should it be
-so difficult to do the same but with an F in front of it? So I added a f\* key
-at the left side of the keyboard, that puts the F1–F9 keys on the same ones as
-1–9. The pinky was given the last three function keys.
-
-This makes it much easier and more convenient to use the function keys. My ideal
-keyboard wouldn’t have a function key row at all.
-
 The anishtro letter layout
 --------------------------
 
@@ -198,53 +171,155 @@ I’ve still included a few special keys—ones that I use a lot: `“ ” ‘ �
 no more than that.
 
 
-Installation
-============
+Installation explanation
+========================
 
-I’ve implemented the layout using a mixture of custom firmware for the TECK and
-an XKB keyboard layout, designed both to achieve a layout I really like for the
-TECK while at the same time largely make my Swedish QWERTY laptop keys do what
-their labels say. I don’t expect anyone else to find this particular
-implementation useful.
+These are my requirements/limitations:
+
+- Must work in Wayland.
+- Should be easy to install.
+- Should modify as little system files as possible.
+- Should work with the laptop keyboard and the TECK simultaneously.
+- Is limited by the TECK firmware.
+
+Have a headache yet?
+
+As far as I can tell, the only way to customize your keyboard layout in Wayland
+is to implement a proper XKB layout, just like all the other layouts already
+available. On the upside, adding a layout this way means that it’ll work very
+reliably: It will show up in the GUI and should allow switching to another
+layout easily. You also avoid depending on startup/login scripts.
+
+Also as far as I can tell, there’s no way to add a new layout without modifying system files. To keep the installation as simple and non-intrusive as possible, I use a few little hacks.
+
+On Ubuntu, the keyboard layouts live in `/usr/share/X11/xkb/symbols`. In there,
+there’s basically one file per layout (plus some general files that are used for
+all layouts). For example, `us` contains the en-US QWERTY layout (and some
+more).
+
+The file `my` is interesting. This is its entire contents, which is an exact
+copy of `bn`:
+
+```
+default partial alphanumeric_keys
+xkb_symbols "jawi" {
+    include "id(jawi)"
+
+    name[Group1]= "Malay (Jawi)";
+};
+```
+
+This makes the aptly named `my` layout a perfect candidate for hacking in our
+layout. While it is possible to add your own layout, it’s much easier to replace
+one of the existing ones that you never use. (And if you _do_ happen to use `my`
+you could just switch to `bn` instead. They’re identical, and even named the
+same in the GUI.)
+
+So we can remove `my` and replace it with a symlink to our own layout.
+
+My layout has a lot more keys than regular ones, due to the symbol layer. The
+criteria for the keys in the symbol layer are:
+
+- They must not appear in the main layer, so I can rebind them.
+- They must be recognized by XKB.
+- They must not be overridden by XKB.
+
+The last point can be explained with this command:
+
+```
+$ setxkbmap -print
+xkb_keymap {
+	xkb_keycodes  { include "evdev+aliases(qwerty)"	};
+	xkb_types     { include "complete"	};
+	xkb_compat    { include "complete"	};
+	xkb_symbols   { include "pc+my+inet(evdev)"	};
+	xkb_geometry  { include "pc(pc105)"	};
+};
+```
+
+The interesting part is the `xkb_symbols` line. `pc`, `my` and `inet` are files
+in `/usr/share/X11/xkb/symbols/`. `(evdev)` means that the keymap called “evdev”
+inside `inet` should be used. (When there’s no name in parentheses, the keymap
+named “default” inside a file is used.) The files are applied in order, with
+latter ones overriding previous ones.
+
+In our `my` file, we can override `pc` (which defines the base keys for all
+layouts, such as modifier keys, arrow keys, enter, backspace, etc.) But we can’t
+override `inet` (which defines media keys and F13–F24). So unless we modify
+`inet`, all of those keys are basically out of the question to use.
+
+One _could_ use non-standard keys, by defining their key codes in
+`/usr/share/X11/xkb/keycodes/evdev`. But I haven’t felt like experimenting with
+putting the correct numbers in the TECK firmware and finding the corresponding
+XKB numbers. And testing if it actually works out in the end. Also, if I modify
+`keycodes/evdev` I could just as well modify `inet`.
+
+So, these limitations combined does not leave an awful lot of keys available.
+What I did is taking all the numpad keys and shoving them wherever I need a new
+key. I don’t need a classic numpad anyway, so that’s fine. The numpad keys were
+not enough, though. So I also use F13-F20 (there’s up to F24 if you need even
+more keys). Unfortunately, that meant that I had to comment out F13-F20 in
+`inet`, but at least that’s a minor edit to do.
+
+
+Installation instructions
+-------------------------
+
+Remember that I’ve implemented the layout using a mixture of custom firmware for
+the TECK and an XKB keyboard layout, designed both to achieve a layout I really
+like for the TECK while at the same time largely make my Swedish QWERTY laptop
+keys do what their labels say. I don’t expect anyone else to find this
+particular implementation useful.
 
 Upgrade your Truly Ergonomic Keyboard with the firmware in `teck_se.hex`. That
 file was generated using the layout designer on Truly Ergonomic’s website.
-There is a URL to it in `teck_se.url`.
+There is a URL to it in `teck_se.url`. You can do this using [teck-programmer].
 
-To use the layout, run the `teck_se` file.
+Then run `sudo ./setup install` in this repository to “install” the XKB layout.
+Running just `./setup` shows what the script will do. There’s also `./setup
+uninstall` for reversing the process.
 
-You can autorun that file when logging in. If you’re using Gnome, you can copy
-`teck_se.desktop` into `~/.config/autostart`. You need to adjust the path to
-`teck_se` in that file first, though. You might also need to adjust the delay
-in it.
+What the setup script does is removing the `/usr/share/X11/xkb/symbols/my/` and
+replacing it with a symlink to `teck_se` in this repository. It also comments
+out a few lines in `inet` and `pc` in the same folder as `my`.
 
-Run `setxkbmap` to return to your regular layout.
+When that’s done, you can run `setxkbmap my` to try the layout out if you run
+Xorg (not Wayland). That’s handy when testing and making adjustments to the
+layout. You can use the system settings GUI to make the layout choice more permanent (and working in Wayland).
 
-I don’t know a good way to use the layout in the login screen. That’s not
-important for me though.
+When using the system settings GUI, you need to add “Malay (Jawi) _ms_” to your
+input sources. This can be a bit confusing, because there’s probably two of
+those (one for the `bn` file and one for the `my` file, as mentioned in another
+section). Try both and see which one is correct.
 
-When I first made this XKB layout, I autoran the about command, and it worked
-great. After a while, it didn’t. Then I came up with a different (and a bit
-more complex) installation method. When I upgraded my operating system, though,
-that method stopped working, and the original method started working again.
-Odd.
+While “Malay” and “Jawi” are really cool names, you might want the layout to
+show up as something else in the GUI. To do this, edit
+`/usr/share/X11/xkb/rules/evdev.xml`. Look for this section:
 
-A note about Num Lock and plugging in and out the TECK
-------------------------------------------------------
+    <name>my</name>
+    <shortDescription>ms</shortDescription>
+    <description>Malay (Jawi)</description>
+
+You can change the short and long descriptions as you like, for example:
+
+    <name>my</name>
+    <shortDescription>my</shortDescription>
+    <description>My awesome layout</description>
+
+`/usr/share/X11/xkb/rules/base.xml` is a copy of `evdev.xml` on my system, and
+as such acting as a backup. I think it’s the easiest to log out and in again to
+apply the changes in `evdev.xml`.
+
+
+A note about Num Lock
+---------------------
 
 The new firmware adds numpad keys here and there. The XKB layout then remaps
-those to symbols and such. When pressing such keys, the TECK might send both
-the desired key and Num Lock. That extra Num Lock usually makes no difference,
-but it might break some keyboard shortcuts. If you’re using Gnome, here’s how
-you can prevent the TECK from sending that extra Num Lock.
-
-1. Run `gsettings set org.gnome.settings-daemon.peripherals.keyboard numlock-state on`.
-2. Log out and log in again.
-
-If you plug the TECK in after you have logged in, it doesn’t matter if you have
-autorun `teck_se` when logging in. It will have no effect. Then you either need
-to run `teck_se` again, or log out and log in. The latter option is better,
-because otherwise the TECK will start to send that extra Num Lock.
+those to symbols and such. When pressing such keys, the TECK sends both the
+desired key and Num Lock. That extra Num Lock usually makes no difference, but
+it might break some keyboard shortcuts. For this reason, the setup scripts
+patches the `pc` XKB symbols file, making the OS no longer recognize the Num
+Lock key.
 
 
 [anishtro]: https://github.com/lydell/anishtro
@@ -252,4 +327,5 @@ because otherwise the TECK will start to send that extra Num Lock.
 [dual]: https://github.com/lydell/dual
 [dual-role]: http://en.wikipedia.org/wiki/Modifier_key#Dual-role_keys
 [gh-dr]: https://geekhack.org/index.php?topic=41685.0
+[teck-programmer]: https://github.com/m-ou-se/teck-programmer
 [TMK]: https://github.com/tmk/tmk_keyboard

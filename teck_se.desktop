@@ -1,9 +1,0 @@
-[Desktop Entry]
-Type=Application
-Exec=/home/keyboard/teck_se
-Hidden=false
-NoDisplay=false
-X-GNOME-Autostart-enabled=true
-X-GNOME-Autostart-Delay=1
-Name=teck_se
-Comment=

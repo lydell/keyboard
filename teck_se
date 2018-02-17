@@ -1,3 +1,110 @@
-#!/usr/bin/env bash
-dir="$(dirname "$BASH_SOURCE")"
-xkbcomp "-I$dir" "$dir/teck_se.xkb" $DISPLAY &>/dev/null
+default partial alphanumeric_keys
+xkb_symbols "jawi" {
+    name[Group1]= "teck_se";
+    include "level3(ralt_switch)"
+
+
+
+    key <TLDE> {[    eacute                ,  Eacute                        ]};
+    key <AD11> {[    aring                 ,  Aring                         ]};
+
+
+
+    key <KPSU> {[    rightdoublequotemark  ,  leftdoublequotemark           ]};
+    key <AD01> {[    q                     ,  Q                             ]};
+    key <AC09> {[    l                     ,  L                             ]};
+    key <AD07> {[    u                     ,  U                             ]};
+    key <AB03> {[    c                     ,  C                             ]};
+    key <AC07> {[    j                     ,  J                             ]};
+
+    key <AC08> {[    k                     ,  K                             ]};
+    key <AD10> {[    p                     ,  P                             ]};
+    key <AB07> {[    m                     ,  M                             ]};
+    key <AD02> {[    w                     ,  W                             ]};
+    key <AB10> {[    minus                 ,  underscore                    ]};
+    key <KPAD> {[    rightsinglequotemark  ,  leftsinglequotemark           ]};
+
+
+
+    key <AC01> {[    a                     ,  A                             ]};
+    key <AB06> {[    n                     ,  N                             ]};
+    key <AD08> {[    i                     ,  I                             ]};
+    key <AC02> {[    s                     ,  S                             ]};
+    key <AB04> {[    v                     ,  V                             ]};
+
+    key <AB05> {[    b                     ,  B                             ]};
+    key <AC06> {[    h                     ,  H                             ]};
+    key <AD05> {[    t                     ,  T                             ]};
+    key <AD04> {[    r                     ,  R                             ]};
+    key <AD09> {[    o                     ,  O                             ]};
+
+
+
+    key <AC11> {[    adiaeresis            ,  Adiaeresis                    ]};
+    key <KPDV> {[    slash                 ,  backslash                     ]};
+    key <FK20> {[    question              ,  exclam                        ]};
+    key <AD06> {[    y                     ,  Y                             ]};
+    key <AC05> {[    g                     ,  G                             ]};
+    key <AB02> {[    x                     ,  X                             ]};
+
+    key <AB01> {[    z                     ,  Z                             ]};
+    key <AC04> {[    f                     ,  F                             ]};
+    key <AC03> {[    d                     ,  D                             ]};
+    key <AB09> {[    period                ,  colon                         ]};
+    key <AB08> {[    comma                 ,  semicolon                     ]};
+    key <AC10> {[    odiaeresis            ,  Odiaeresis                    ]};
+
+
+
+    key <KPEN> {[    F13                 ]};
+    key <PAUS> {[    Multi_key           ]};
+    key <AD03> {[    e , E , EuroSign    ]};
+
+
+
+    key <FK13> {[    greater                                          ]};
+    key <KP7>  {[    braceleft     ,  braceleft                       ]};
+    key <KP8>  {[    braceright    ,  braceright                      ]};
+    key <KPMU> {[    asterisk      ,  asterisk                        ]};
+
+    key <FK14> {[    numbersign                                       ]};
+    key <AE07> {[    7             ,  slash        ,  braceleft       ]};
+    key <AE08> {[    8             ,  parenleft    ,  bracketleft     ]};
+    key <AE09> {[    9             ,  parenright   ,  bracketright    ]};
+    key <KP9>  {[    asciicircum   ,  asciicircum                     ]};
+
+
+
+    key <FK15> {[    ampersand                                        ]};
+    key <KP1>  {[    bracketleft   ,  bracketleft                     ]};
+    key <KP2>  {[    bracketright  ,  bracketright                    ]};
+    key <KP4>  {[    parenleft     ,  parenleft                       ]};
+    key <KP5>  {[    parenright    ,  parenright                      ]};
+    key <FK16> {[    at                                               ]};
+
+    key <AE11> {[    plus          ,  question     ,  backslash       ]};
+    key <AE04> {[    4             ,  currency     ,  dollar          ]};
+    key <AE05> {[    5             ,  percent      ,  EuroSign        ]};
+    key <AE06> {[    6             ,  ampersand                       ]};
+    key <KPEQ> {[    equal         ,  equal                           ]};
+    key <KP6>  {[    bar           ,  bar                             ]};
+
+
+
+    key <FK17> {[    asciitilde    ,  asciitilde                      ]};
+    key <AE12> {[    grave         ,  acute                           ]};
+    key <BKSL> {[    apostrophe    ,  asterisk                        ]};
+    key <FK18> {[    quotedbl                                         ]};
+    key <FK19> {[    emdash                                           ]};
+
+    key <AD12> {[    endash        ,  asciicircum  ,  asciitilde      ]};
+    key <AE01> {[    1             ,  exclam                          ]};
+    key <AE02> {[    2             ,  quotedbl     ,  at              ]};
+    key <AE03> {[    3             ,  numbersign   ,  sterling        ]};
+    key <KP3>  {[    percent       ,  percent                         ]};
+
+
+
+    key <KP0>  {[    dollar        ,  dollar                          ]};
+    key <AE10> {[    0             ,  equal        ,  braceright      ]};
+};

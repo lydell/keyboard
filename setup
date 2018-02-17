@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+dir='/usr/share/X11/xkb/symbols'
+symbols="$(dirname "$(realpath "${BASH_SOURCE[0]}")")/teck_se"
+symbolsToReplace="$dir/my"
+symbolsToReplaceCopy="$dir/bn"
+symbolsToPatch1="$dir/inet"
+symbolsToPatch2="$dir/pc"
+
+comment=''
+
+case "$1" in
+  install )
+    comment='//'
+    echo 'Installing…'
+    ;;
+  uninstall )
+    echo 'Uninstalling…'
+    ;;
+  * )
+    echo "Usage: $0 (install|uninstall)"
+    echo ''
+    echo 'You probably need to run this with sudo.'
+    echo ''
+    echo "$0 install"
+    echo ''
+    echo '  Replaces'
+    echo "  $symbolsToReplace"
+    echo '  with a symlink to'
+    echo "  $symbols"
+    echo ''
+    echo '  Comments out lines defining F13–F20 in'
+    echo "  $symbolsToPatch1"
+    echo ''
+    echo '  Comments out lines defining Num Lock in'
+    echo "  $symbolsToPatch2"
+    echo ''
+    echo "$0 uninstall"
+    echo ''
+    echo '  Replaces'
+    echo "  $symbolsToReplace"
+    echo '  with a copy of'
+    echo "  $symbolsToReplaceCopy"
+    echo '  which is identical to the original'
+    echo "  $symbolsToReplace"
+    echo ''
+    echo '  Uncomments lines defining F13–F20 in'
+    echo "  $symbolsToPatch1"
+    echo ''
+    echo '  Uncomments lines defining Num Lock in'
+    echo "  $symbolsToPatch2"
+    echo ''
+    echo 'It is safe to run install or uninstall several times in a row.'
+    exit 1
+    ;;
+esac
+
+echoRun() {
+  cmd="$*"
+  echo "$cmd"
+  $cmd
+}
+
+toggleComment() {
+  regex="$1"
+  file="$2"
+  echoRun sed -E -i \
+    's#^(//)?(.+'"$regex"')#'"$comment"'\2#' \
+    "$file"
+}
+
+if test -z "$comment"; then
+  echoRun cp --remove-destination "$symbolsToReplaceCopy" "$symbolsToReplace"
+else
+  echoRun ln -s -f "$symbols" "$symbolsToReplace"
+fi
+
+toggleComment 'FK(1[3-9]|20)' "$symbolsToPatch1"
+toggleComment 'NMLK' "$symbolsToPatch2"
+
+echo 'Done.'
