@@ -5,7 +5,6 @@ symbols="$(dirname "$(realpath "${BASH_SOURCE[0]}")")/teck_se"
 symbolsToReplace="$dir/my"
 symbolsToReplaceCopy="$dir/bn"
 symbolsToPatch1="$dir/inet"
-symbolsToPatch2="$dir/pc"
 
 comment=''
 
@@ -32,9 +31,6 @@ case "$1" in
     echo '  Comments out lines defining F13–F20 in'
     echo "  $symbolsToPatch1"
     echo ''
-    echo '  Comments out lines defining Num Lock in'
-    echo "  $symbolsToPatch2"
-    echo ''
     echo "$0 uninstall"
     echo ''
     echo '  Replaces'
@@ -46,9 +42,6 @@ case "$1" in
     echo ''
     echo '  Uncomments lines defining F13–F20 in'
     echo "  $symbolsToPatch1"
-    echo ''
-    echo '  Uncomments lines defining Num Lock in'
-    echo "  $symbolsToPatch2"
     echo ''
     echo 'It is safe to run install or uninstall several times in a row.'
     exit 1
@@ -76,6 +69,5 @@ else
 fi
 
 toggleComment 'FK(1[3-9]|20)' "$symbolsToPatch1"
-toggleComment 'NMLK' "$symbolsToPatch2"
 
 echo 'Done.'

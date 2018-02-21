@@ -281,7 +281,7 @@ uninstall` for reversing the process.
 
 What the setup script does is removing the `/usr/share/X11/xkb/symbols/my/` and
 replacing it with a symlink to `teck_se` in this repository. It also comments
-out a few lines in `inet` and `pc` in the same folder as `my`.
+out a few lines in `inet` in the same folder as `my`.
 
 When that’s done, you can run `setxkbmap my` to try the layout out if you run
 Xorg (not Wayland). That’s handy when testing and making adjustments to the
@@ -317,9 +317,11 @@ A note about Num Lock
 The new firmware adds numpad keys here and there. The XKB layout then remaps
 those to symbols and such. When pressing such keys, the TECK sends both the
 desired key and Num Lock. That extra Num Lock usually makes no difference, but
-it might break some keyboard shortcuts. For this reason, the setup scripts
-patches the `pc` XKB symbols file, making the OS no longer recognize the Num
-Lock key.
+it might break some keyboard shortcuts. For example, trying to enter the `g $`
+keyboard shortcut sequence in the Atom text editor results in Atom receiving `g
+NumLock $`, which breaks the sequence. To work around this, Num Lock has been
+remapped to ctrl. There seems to be no harm sending a ctrl press before symbols,
+and Atom allows it to be pressed in the middle of sequences.
 
 
 [anishtro]: https://github.com/lydell/anishtro
