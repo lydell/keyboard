@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 dir='/usr/share/X11/xkb/symbols'
-symbols="$(dirname "$(realpath "${BASH_SOURCE[0]}")")/teck_se"
-symbolsToReplace="$dir/my"
-symbolsToReplaceCopy="$dir/bn"
+thisDir="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
+symbols="$thisDir/teck_se"
+symbolsToReplace="$dir/au"
+symbolsToReplaceCopy="$thisDir/au-backup"
 symbolsToPatch1="$dir/inet"
 
 comment=''
@@ -37,8 +38,8 @@ case "$1" in
     echo "  $symbolsToReplace"
     echo '  with a copy of'
     echo "  $symbolsToReplaceCopy"
-    echo '  which is identical to the original'
-    echo "  $symbolsToReplace"
+    echo '  which comes from'
+    echo '  https://cgit.freedesktop.org/xkeyboard-config/tree/symbols/au?id=8791fd60ca031441fbe5b137d8587e0285490fb1'
     echo ''
     echo '  Uncomments lines defining F13–F20 in'
     echo "  $symbolsToPatch1"

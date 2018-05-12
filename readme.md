@@ -197,25 +197,32 @@ there’s basically one file per layout (plus some general files that are used f
 all layouts). For example, `us` contains the en-US QWERTY layout (and some
 more).
 
-The file `my` is interesting. This is its entire contents, which is an exact
-copy of `bn`:
+The trick is to modify the `au` layout. This is its entire contents:
 
 ```
-default partial alphanumeric_keys
-xkb_symbols "jawi" {
-    include "id(jawi)"
+//
+// Default Australian is the same as American
+//
+default  partial alphanumeric_keys
+xkb_symbols "basic" {
+    include "us(basic)"
 
-    name[Group1]= "Malay (Jawi)";
+    name[Group1]= "English (Australian)";
 };
 ```
 
-This makes the aptly named `my` layout a perfect candidate for hacking in our
-layout. While it is possible to add your own layout, it’s much easier to replace
-one of the existing ones that you never use. (And if you _do_ happen to use `my`
-you could just switch to `bn` instead. They’re identical, and even named the
-same in the GUI.)
+When this was written, [that file was last changed mid-2016][au-commit] with the
+following commit message:
 
-So we can remove `my` and replace it with a symlink to our own layout.
+> Australians use the 'us' layout but add an alias anyway so it's easy to find
+> in the respective configuration tools.
+
+In other words, it is very unlikely to change and as such a golden (pun
+intended) candidate for a safe layout to replace. While it is possible to add
+your own layout, it’s much easier to replace one of the existing ones that you
+never use. And even if you are Australian and _do_ use the `au` layout you could
+just use `us` instead. (I used to [modify the `my`
+layout](#a-story-on-the-my-layout), but that is no longer a good idea.)
 
 My layout has a lot more keys than regular ones, due to the symbol layer. The
 criteria for the keys in the symbol layer are:
@@ -232,18 +239,18 @@ xkb_keymap {
 	xkb_keycodes  { include "evdev+aliases(qwerty)"	};
 	xkb_types     { include "complete"	};
 	xkb_compat    { include "complete"	};
-	xkb_symbols   { include "pc+my+inet(evdev)"	};
+	xkb_symbols   { include "pc+au+inet(evdev)"	};
 	xkb_geometry  { include "pc(pc105)"	};
 };
 ```
 
-The interesting part is the `xkb_symbols` line. `pc`, `my` and `inet` are files
+The interesting part is the `xkb_symbols` line. `pc`, `au` and `inet` are files
 in `/usr/share/X11/xkb/symbols/`. `(evdev)` means that the keymap called “evdev”
 inside `inet` should be used. (When there’s no name in parentheses, the keymap
 named “default” inside a file is used.) The files are applied in order, with
 latter ones overriding previous ones.
 
-In our `my` file, we can override `pc` (which defines the base keys for all
+In our `au` file, we can override `pc` (which defines the base keys for all
 layouts, such as modifier keys, arrow keys, enter, backspace, etc.) But we can’t
 override `inet` (which defines media keys and F13–F24). So unless we modify
 `inet`, all of those keys are basically out of the question to use.
@@ -262,6 +269,47 @@ more keys). Unfortunately, that meant that I had to comment out F13-F20 in
 `inet`, but at least that’s a minor edit to do.
 
 
+A story on the _my_ layout
+--------------------------
+
+The file `my` _used to be_ interesting. This was its entire contents, which was
+an exact copy of `bn`:
+
+```
+default partial alphanumeric_keys
+xkb_symbols "jawi" {
+    include "id(jawi)"
+
+    name[Group1]= "Malay (Jawi)";
+};
+```
+
+This made the aptly named `my` layout a perfect candidate for hacking in our
+layout. If you _did_ happen to use `my` you could just switch to `bn` instead.
+They were identical, and even named the same in the GUI.
+
+However, the [`my` layout has since been updated][my-commit] to it’s own,
+full-blown layout, `bn` seems to have been removed.
+
+But the most important reason not to use `my` is because of Ubuntu 18.04. When I
+upgraded to 18.04 from 17.10, the installation noticed that I had set my
+keyboard layout to `my` and tried to be helpful and also set `my` as the layout
+used in the full-disk encryption unlock boot screen. But before doing so, the
+upgrade replaced the modded `my` with the latest version from the distribution.
+This meant that I had a keyboard layout full of characters that I don’t know,
+and can’t type my password on.
+
+To be able to use the computer again I had to boot a from a live USB stick,
+temporarily change the password to a single character, look up how to type that
+character in the `my` layout, and then finally unlock the encryption screen.
+Once I had changed the layout back to `us`, I ran `sudo update-initramfs -k all
+-u` to update the layout used in the unlock screen.
+
+For the above reason, `au` is a safer bet to hack. Because if it ever gets reset
+back to its original contents (or is updated), you end up with the `us` layout,
+which most people know.
+
+
 Installation instructions
 -------------------------
 
@@ -277,33 +325,34 @@ There is a URL to it in `teck_se.url`. You can do this using [teck-programmer].
 
 Then run `sudo ./setup install` in this repository to “install” the XKB layout.
 Running just `./setup` shows what the script will do. There’s also `./setup
-uninstall` for reversing the process.
+uninstall` for reversing the process. (Note that `./setup uninstall` uses
+`au-backup` to restore `au`. You might want to grab [the latest `au`
+version][au-latest] instead, but it is, as mentioned earlier, not very likely to
+change.)
 
-What the setup script does is removing the `/usr/share/X11/xkb/symbols/my/` and
+What the setup script does is removing `/usr/share/X11/xkb/symbols/au/` and
 replacing it with a symlink to `teck_se` in this repository. It also comments
-out a few lines in `inet` in the same folder as `my`.
+out a few lines in `inet` in the same folder as `au`.
 
-When that’s done, you can run `setxkbmap my` to try the layout out if you run
+When that’s done, you can run `setxkbmap au` to try the layout out if you run
 Xorg (not Wayland). That’s handy when testing and making adjustments to the
 layout. You can use the system settings GUI to make the layout choice more permanent (and working in Wayland).
 
-When using the system settings GUI, you need to add “Malay (Jawi) _ms_” to your
-input sources. This can be a bit confusing, because there’s probably two of
-those (one for the `bn` file and one for the `my` file, as mentioned in another
-section). Try both and see which one is correct.
+When using the system settings GUI, you need to add “English (Australian) _au_”
+to your input sources.
 
-While “Malay” and “Jawi” are really cool names, you might want the layout to
-show up as something else in the GUI. To do this, edit
-`/usr/share/X11/xkb/rules/evdev.xml`. Look for this section:
+If you want the layout to show up as something else other than “English
+(Australian)” in the GUI, edit `/usr/share/X11/xkb/rules/evdev.xml`. Look for
+this section:
 
-    <name>my</name>
-    <shortDescription>ms</shortDescription>
-    <description>Malay (Jawi)</description>
+    <name>au</name>
+    <shortDescription>en</shortDescription>
+    <description>English (Australian)</description>
 
 You can change the short and long descriptions as you like, for example:
 
-    <name>my</name>
-    <shortDescription>my</shortDescription>
+    <name>au</name>
+    <shortDescription>en</shortDescription>
     <description>My awesome layout</description>
 
 `/usr/share/X11/xkb/rules/base.xml` is a copy of `evdev.xml` on my system, and
@@ -324,10 +373,13 @@ remapped to ctrl. There seems to be no harm sending a ctrl press before symbols,
 and Atom allows it to be pressed in the middle of sequences.
 
 
+[TMK]: https://github.com/tmk/tmk_keyboard
 [anishtro]: https://github.com/lydell/anishtro
 [arensito]: http://www.pvv.org/~hakonhal/main.cgi/keyboard
-[dual]: https://github.com/lydell/dual
+[au-commit]: https://cgit.freedesktop.org/xkeyboard-config/commit/symbols/au?id=8791fd60ca031441fbe5b137d8587e0285490fb1
+[au-latest]: https://cgit.freedesktop.org/xkeyboard-config/tree/symbols/au
 [dual-role]: http://en.wikipedia.org/wiki/Modifier_key#Dual-role_keys
+[dual]: https://github.com/lydell/dual
 [gh-dr]: https://geekhack.org/index.php?topic=41685.0
+[my-commit]: https://cgit.freedesktop.org/xkeyboard-config/commit/symbols/my?id=750db0173a8b25cfb169bb204d97daea393ce412
 [teck-programmer]: https://github.com/m-ou-se/teck-programmer
-[TMK]: https://github.com/tmk/tmk_keyboard
