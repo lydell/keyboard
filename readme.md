@@ -6,7 +6,7 @@ Keyboard”). I hope it may be of inspiration to someone.
 
 ```
 ins f1  f2  f3  f4    f5  f6  f7  f8    f9  f10 f11 f12 prt
-                        cl      ql
+                            cl  ql
  ↞  men  é  alt ctl sft sup f13 sup sft ctl alt  å  men  ↟
  ↠  ”“  <q  >l  {u  }c  *j  cmp #k  7p  8m  9w  ^-_  ’‘  ↡
 tab═&══ >a  ]n  (i  )s  @v  del +b  4h  5t  6r  =o  |═══esc

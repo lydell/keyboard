@@ -3,6 +3,8 @@ xkb_symbols "basic" {
     name[Group1]= "teck_se";
     include "level3(ralt_switch)"
     key <NMLK> {[ Control_L ]};
+    key <CAPS> {[ Escape ]};
+    key <SCLK> {[ Caps_Lock ]};
 
 
 

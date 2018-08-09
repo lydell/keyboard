@@ -7,7 +7,7 @@ The laptop layout:
 esc f1  f2  f3  f4   f5  f6  f7  f8   f9  f10 f11 f12 prt del
  é   1! @2" £3# $4¤ €5%  6& {7/ [8( ]9) }0= \+?  `´ ══bs═  ↞ (cmp)
 ═tab  q   w  €e   r   t   y   u   i   o   p   å  ~–^ ═ent  ↠
-═cl══  a   s   d   f   g   h   j   k   l   ö   ä   '* ╚═╝  ↟
+═esc═  a   s   d   f   g   h   j   k   l   ö   ä   '* ╚═╝  ↟ (cl)
 sft |<>  z   x   c   v   b   n   m   ,;  .:  -_ ═sft═  ↑   ↡ (ins)
 ctl fn  sup alt ═════════␣═════════ agr men ═ctl═  ←   ↓   →
 ```
@@ -83,3 +83,6 @@ differences are:
   are also no longer dead. I think that’s acceptable, too. People usually only
   use those symbols on their own, and almost never to put them above other
   letters.
+- The Caps Lock key. I sometimes press it by mistake, which is annoying. Instead
+  I’ve moved Escape there. It really helps when using Vim. Should anyone need
+  Caps Lock I’ve replaced Scroll Lock with it. Who uses Scroll Lock?
