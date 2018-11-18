@@ -20,7 +20,11 @@ easily input `é` is needed. This specific key is very similar in location
 compared to the TECK layout.
 
 The key to the right of `å` is en-dash. The default `"` diaresis is useless; the
-en dash is not.
+en dash is not. I’ve also added em-dash on `altgr+shift`.
+
+The `'` key has been enhanced with `’` and `‘` on `altgr` and `altgr+shift`,
+respectively. Similarly, `1` has `”` and `“` (I wanted to put them on `2`
+because that’s where `"` is, but `altgr+2` is already taken for `@`).
 
 The reason I use the TECK’s function layer for the symbol layer instead of AltGr
 is that it is more reliable. Some programs don’t recognize keyboard shortcuts
@@ -79,7 +83,7 @@ differences are:
 - The `` ´` `` key. The two characters have been swapped. They are also no
   longer dead keys. I think that’s acceptable. People usually only use the dead
   acute accent to type é.
-- The `^"~` (diaresis) key. Almost nobody ever use the dead diaresis.  The keys
+- The `^"~` (diaresis) key. Almost nobody ever use the dead diaresis. The keys
   are also no longer dead. I think that’s acceptable, too. People usually only
   use those symbols on their own, and almost never to put them above other
   letters.

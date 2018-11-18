@@ -96,12 +96,12 @@ xkb_symbols "basic" {
 
     key <FK17> {[    asciitilde    ,  asciitilde                      ]};
     key <AE12> {[    grave         ,  acute                           ]};
-    key <BKSL> {[    apostrophe    ,  asterisk                        ]};
+    key <BKSL> {[    apostrophe    ,  asterisk     ,  rightsinglequotemark  ,  leftsinglequotemark  ]};
     key <FK18> {[    quotedbl                                         ]};
     key <FK19> {[    emdash                                           ]};
 
-    key <AD12> {[    endash        ,  asciicircum  ,  asciitilde      ]};
-    key <AE01> {[    1             ,  exclam                          ]};
+    key <AD12> {[    endash        ,  asciicircum  ,  asciitilde            ,  emdash               ]};
+    key <AE01> {[    1             ,  exclam       ,  rightdoublequotemark  ,  leftdoublequotemark  ]};
     key <AE02> {[    2             ,  quotedbl     ,  at              ]};
     key <AE03> {[    3             ,  numbersign   ,  sterling        ]};
     key <KP3>  {[    percent       ,  percent                         ]};
