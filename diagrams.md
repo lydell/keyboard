@@ -45,9 +45,8 @@ an AltGr key.
 Also note that this compact notation is not able to truly represent some updates
 I made to the layout:
 
-- The Print Screen key is actually in the AltGr layer since I don’t use it very
-  often and sometimes hit it by mistake. For consistency, I moved the Insert key
-  to the AltGr layer as well. (Both of those keys are empty in the main layer.)
+- The Insert key is actually in the AltGr layer since I don’t use it very
+  often and sometimes hit it by mistake. (This key is empty in the main layer.)
 - The ”“ and ’‘ keys have F6 and F12 in the AltGr layer, respectively. Those are
   the F keys I use the most. (I used to have an F layer, but sadly I couldn’t
   get it to work in Ubuntu 17.10. Similarly, I used to have a mouse keys layer,
