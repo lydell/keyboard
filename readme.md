@@ -2,7 +2,8 @@ Overview
 ========
 
 This is my personal keyboard layout. It is made for the TECK (“Truly Ergonomic
-Keyboard”). I hope it may be of inspiration to someone.
+Keyboard”). There’s also a port for the Ergodox EZ. I hope it may be of
+inspiration to someone.
 
 ```
 ins f1  f2  f3  f4    f5  f6  f7  f8    f9  f10 f11 f12 prt
@@ -322,6 +323,9 @@ particular implementation useful.
 Upgrade your Truly Ergonomic Keyboard with the firmware in `teck_se.hex`. That
 file was generated using the layout designer on Truly Ergonomic’s website.
 There is a URL to it in `teck_se.url`. You can do this using [teck-programmer].
+
+(There’s also firmware for the Ergodox EZ in `ergodox-ez.hex` and a link to it
+in `ergodox-ez.url`. Go to that URL for installation instructions.)
 
 Then run `sudo ./setup install` in this repository to “install” the XKB layout.
 Running just `./setup` shows what the script will do. There’s also `./setup
