@@ -191,7 +191,9 @@ available. On the upside, adding a layout this way means that it’ll work very
 reliably: It will show up in the GUI and should allow switching to another
 layout easily. You also avoid depending on startup/login scripts.
 
-Also as far as I can tell, there’s no way to add a new layout without modifying system files. To keep the installation as simple and non-intrusive as possible, I use a few little hacks.
+Also as far as I can tell, there’s no way to add a new layout without modifying
+system files. To keep the installation as simple and non-intrusive as possible,
+I use a few little hacks.
 
 On Ubuntu, the keyboard layouts live in `/usr/share/X11/xkb/symbols`. In there,
 there’s basically one file per layout (plus some general files that are used for
@@ -340,7 +342,8 @@ out a few lines in `inet` in the same folder as `au`.
 
 When that’s done, you can run `setxkbmap au` to try the layout out if you run
 Xorg (not Wayland). That’s handy when testing and making adjustments to the
-layout. You can use the system settings GUI to make the layout choice more permanent (and working in Wayland).
+layout. You can use the system settings GUI to make the layout choice more
+permanent (and working in Wayland).
 
 When using the system settings GUI, you need to add “English (Australian) _au_”
 to your input sources.

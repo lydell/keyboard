@@ -4,16 +4,14 @@ or useful to anyone else.
 The laptop layout:
 
 ```
-esc f1  f2  f3  f4   f5  f6  f7  f8   f9  f10 f11 f12 prt del
- é   1! @2" £3# $4¤ €5%  6& {7/ [8( ]9) }0= \+?  `´ ══bs═  ↞ (cmp)
-═tab  q   w  €e   r   t   y   u   i   o   p   å  ~–^ ═ent  ↠
-═esc═  a   s   d   f   g   h   j   k   l   ö   ä   '* ╚═╝  ↟ (cl)
-sft |<>  z   x   c   v   b   n   m   ,;  .:  -_ ═sft═  ↑   ↡ (ins)
-ctl fn  sup alt ═════════␣═════════ agr men ═ctl═  ←   ↓   →
+esc f1 f2 f3 f4  f5 f6 f7 f8  f9 f10 f11 f12  ↞ ↠ cmp del
+ é   1! @2" £3# $4¤ €5%  6& {7/ [8( ]9) }0= \+?  `´ ══bs═
+═tab  q   w  €e   r   t   y   u   i   o   p   å  ~–^ ═ent
+═esc═  a   s   d   f   g   h   j   k   l   ö   ä   '* ╚═╝
+sft |<>  z   x   c   v   b   n   m   ,;  .:  -_ ═══sft═══
+ctl fn  sup alt ═════════␣═════════ agr men ctl  ↟  ↑  ↡
+                                                 ←  ↓  →
 ```
-
-The two words in parentheses to the right are keys that are in the fn layer of
-the laptop.
 
 `é` replaces the useless `§½` key. Since `´` is no longer dead, another way to
 easily input `é` is needed. This specific key is very similar in location
@@ -89,4 +87,12 @@ differences are:
   letters.
 - The Caps Lock key. I sometimes press it by mistake, which is annoying. Instead
   I’ve moved Escape there. It really helps when using Vim. Should anyone need
-  Caps Lock I’ve replaced Scroll Lock with it. Who uses Scroll Lock?
+  Caps Lock I’ve replaced Scroll Lock with it. Who uses Scroll Lock? The laptop
+  keyboard lacks a Scroll Lock key, so holding AltGr while pressing the former
+  Caps Lock (now Escape) key also produces Caps Lock.
+- The Print Screen key. On the laptop keyboard, at the usual Menu key spot there
+  is a Print Screen key instead. I use the Menu key somewhat regularly, so I've
+  rebound Print Screen to Menu. Ctrl+Menu, Shift+Menu and Super+Menu are used
+  for the different Print Screen commands instead. (Requiring a modifier has the
+  benefit of not taking screen shots by mistake.)
+- The Insert key. I never use it. I've set it to the Compose key instead.
