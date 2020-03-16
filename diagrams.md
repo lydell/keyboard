@@ -25,7 +25,7 @@ The following keys have special meaning:
 - sft: Shift
 - sup: Super
 - cl: Caps Lock
-- ql: QWERTY Lock
+- mac: Mac Lock
 - nl: Num Lock
 - f1–f13: F1–F13
 - ←: Left Arrow

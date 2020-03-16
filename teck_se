@@ -15,7 +15,7 @@ xkb_symbols "basic" {
 
 
 
-    key <KPSU> {[    rightdoublequotemark  ,  leftdoublequotemark           ]};
+    key <LSGT> {[    rightdoublequotemark  ,  leftdoublequotemark           ]};
     key <AD01> {[    q                     ,  Q                             ]};
     key <AC09> {[    l                     ,  L                             ]};
     key <AD07> {[    u                     ,  U                             ]};
@@ -67,6 +67,7 @@ xkb_symbols "basic" {
 
 
 
+    key <KPSU> {[    less                                             ]};
     key <FK13> {[    greater                                          ]};
     key <KP7>  {[    braceleft     ,  braceleft                       ]};
     key <KP8>  {[    braceright    ,  braceright                      ]};
