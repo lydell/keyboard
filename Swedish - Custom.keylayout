@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!-- Fri, 24 Feb 2006 Generated from KCHR: "Swedish - Pro" -->
-<!--Last edited by Ukelele version 3.4.0.300 on 2020-01-02 at 08:20 (CET)-->
+<!--Last edited by Ukelele version 343 on 2021-08-15 at 14:03 (CEST)-->
 <keyboard group="126" id="-24719" name="Swedish - Custom" maxout="1">
     <layouts>
         <layout first="0" last="0" mapSet="ANSI" modifiers="commonModifiers"/>
@@ -104,7 +104,7 @@
             <key code="66" output="&#x001D;"/>
             <key code="67" output="?"/>
             <!-- gap, 68 -->
-            <key code="69" output="+"/>
+            <key code="69" output="—"/>
             <key code="70" output="&#x001C;"/>
             <key code="71" output="&#x001B;"/>
             <key code="72" output="&#x001F;"/>
@@ -112,7 +112,7 @@
             <key code="75" output="/"/>
             <key code="76" output="&#x0003;"/>
             <key code="77" output="&#x001E;"/>
-            <key code="78" output="-"/>
+            <key code="78" output="–"/>
             <!-- gap, 79 through 80 -->
             <key code="79" output="&#x0010;"/>
             <key code="80" output="&#x0010;"/>
