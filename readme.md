@@ -7,7 +7,7 @@ inspiration to someone.
 
 ```
 ins f1  f2  f3  f4    f5  f6  f7  f8    f9  f10 f11 f12 prt
-                            cl  mac
+                            cl  gam
  ↞  men  é  alt ctl sft sup f13 sup sft ctl alt  å  men  ↟
  ↠  ”“  <q  >l  {u  }c  *j  cmp #k  7p  8m  9w  ^-_  ’‘  ↡
 tab═&══ >a  ]n  (i  )s  @v  del +b  4h  5t  6r  =o  |═══esc
@@ -292,7 +292,7 @@ layout. If you _did_ happen to use `my` you could just switch to `bn` instead.
 They were identical, and even named the same in the GUI.
 
 However, the [`my` layout has since been updated][my-commit] to it’s own,
-full-blown layout, `bn` seems to have been removed.
+full-blown layout, while `bn` seems to have been removed.
 
 But the most important reason not to use `my` is because of Ubuntu 18.04. When I
 upgraded to 18.04 from 17.10, the installation noticed that I had set my
@@ -325,9 +325,6 @@ particular implementation useful.
 Upgrade your Truly Ergonomic Keyboard with the firmware in `teck_se.hex`. That
 file was generated using the layout designer on Truly Ergonomic’s website.
 There is a URL to it in `teck_se.url`. You can do this using [teck-programmer].
-
-(There’s also firmware for the Ergodox EZ in `ergodox-ez.hex` and a link to it
-in `ergodox-ez.url`. Go to that URL for installation instructions.)
 
 Then run `sudo ./setup install` in this repository to “install” the XKB layout.
 Running just `./setup` shows what the script will do. There’s also `./setup
@@ -380,6 +377,76 @@ remapped to ctrl. There seems to be no harm sending a ctrl press before symbols,
 and Atom allows it to be pressed in the middle of sequences.
 
 
+Ergodox EZ
+----------
+
+With the Ergodox EZ, I’ve taken a new approach. My customized firmware layout is
+designed to be used with the _(almost)_ standard sv-SE QWERTY layout _for Mac._
+This works on macOS, and on Linux if I use [Kinto.sh], which also gives me
+similar keyboard shortcuts. There’s a special mode for Windows that works with
+the standard sv-SE QWERTY layout _for PC._
+
+It’s possible to do everything I need in Ergodox EZ’s firmware, except a couple
+of things that are done via a custom Swedish layout for Mac (`Swedish -
+Custom.keylayout`) and by patching the “Swedish (Macintosh)” layout on Linux
+(`se.patch`). Having a custom Mac layout is nice anyway, since it also affects
+the MacBook laptop keyboard. These are the changes made:
+
+- Turn `¨` into `’`.
+- Not done: Turn `shift-’` into `‘`. I never use “left single quote mark” in
+  practice so I didn’t bother solving this one.
+- Swap `` ` `` and `´` and make them not dead.
+- Make `~` not dead.
+- Make `^` not dead.
+- The `?`/`!` key.
+- The `–` and `—` keys. On Mac these are possible by sending `option--` and
+  `option-shift--`, but for Linux’s sake I’ve used separate keys for them.
+- On Mac: Make `option-space` type a regular space instead of a non-breaking
+  space, to avoid accidentally ending up with non-breaking spaces which can be
+  confusing.
+- On Linux: Turn the paragraph/degree key into `<`/`>`. (Those keys seem to be
+  swapped on Mac.)
+
+Working around dead keys _can_ be done in the Ergodox EZ firmware, by using
+macros: Type the dead character followed by a space. But avoiding macros is more
+reliable, and makes the keys non-dead on the laptop keyboard. However, I _did_
+take this approach in the Windows mode, because I didn’t have the energy to
+create a custom Windows keyboard layout. (But maybe I should some day, because
+the `?`/`!` and `/`/`\` keys are not possible to do in firmware; as a workaround
+I have `?` and `/` keys but `!` and `\` in the function key layer. I don’t use
+Windows that much though.)
+
+There’s firmware for the Ergodox EZ in `ergodox-ez.hex` and a link to it in
+`ergodox-ez.url`. Go to that URL for installation instructions.
+
+To install the custom macOS keyboard layout:
+
+1. Put `Swedish - Custom.keylayout` in `~/Library/Keyboard Layouts/`.
+   (It was made using [Ukelele].)
+2. Restart the computer.
+3. Finally select the layout in System Preferences.
+
+To patch the “Swedish (Macintosh)” layout on Linux:
+
+1. Apply the patch: `sudo patch --backup /usr/share/X11/xkb/symbols/se se.patch`.
+   If this fails, you can try copying `se-modified` from this repo (it might be
+   outdated, though): `sudo cp se-modified /usr/share/X11/xkb/symbols/se`.
+2. Log out and in again.
+3. Add the “Swedish (Macintosh)” layout in System Settings (unless you haven’t already).
+
+To unpatch:
+
+1. Restore the `/usr/share/X11/xkb/symbols/se` file in one of the following ways:
+
+   - Use the backup file created by the `patch` command:
+     `sudo mv /usr/share/X11/xkb/symbols/se{.orig,}`
+   - Use the backup file in this repo (`se-backup`). It might be outdated, though.
+   - Apply the patch in reverse: `sudo patch --reverse /usr/share/X11/xkb/symbols/se se.patch`
+   - Edit `/usr/share/X11/xkb/symbols/se` by hand. Search for the comments
+     marked with `!!!` and swap things back.
+
+2. Log out and in again.
+
 [TMK]: https://github.com/tmk/tmk_keyboard
 [anishtro]: https://github.com/lydell/anishtro
 [arensito]: http://www.pvv.org/~hakonhal/main.cgi/keyboard
@@ -388,5 +455,7 @@ and Atom allows it to be pressed in the middle of sequences.
 [dual-role]: http://en.wikipedia.org/wiki/Modifier_key#Dual-role_keys
 [dual]: https://github.com/lydell/dual
 [gh-dr]: https://geekhack.org/index.php?topic=41685.0
+[Kinto.sh]: https://github.com/rbreaves/kinto
 [my-commit]: https://cgit.freedesktop.org/xkeyboard-config/commit/symbols/my?id=750db0173a8b25cfb169bb204d97daea393ce412
 [teck-programmer]: https://github.com/m-ou-se/teck-programmer
+[Ukelele]: https://software.sil.org/ukelele/

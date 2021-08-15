@@ -25,7 +25,7 @@ The following keys have special meaning:
 - sft: Shift
 - sup: Super
 - cl: Caps Lock
-- mac: Mac Lock
+- gam: Gaming mode (standard Teck, but with WASD re-arranged basically)
 - nl: Num Lock
 - f1–f13: F1–F13
 - ←: Left Arrow
