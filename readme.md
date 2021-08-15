@@ -406,6 +406,8 @@ the MacBook laptop keyboard. These are the changes made:
   confusing.
 - On Linux: Turn the paragraph/degree key into `<`/`>`. (Those keys seem to be
   swapped on Mac.)
+- On Linux: Make `altgr-e` into `é` and `altgr-shift-e` into `É`, so that the
+  `é`/`É` key works.
 
 Working around dead keys _can_ be done in the Ergodox EZ firmware, by using
 macros: Type the dead character followed by a space. But avoiding macros is more
@@ -423,7 +425,7 @@ To install the custom macOS keyboard layout:
 
 1. Put `Swedish - Custom.keylayout` in `~/Library/Keyboard Layouts/`.
    (It was made using [Ukelele].)
-2. Restart the computer.
+2. Log out and in again. (Possibly: Restart the computer.)
 3. Finally select the layout in System Preferences.
 
 To patch the “Swedish (Macintosh)” layout on Linux:

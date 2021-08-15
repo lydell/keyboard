@@ -197,6 +197,7 @@ xkb_symbols "mac" {
     key <KPMU> {	[        question,      exclam         	]	}; // !!! added
     key <KPSU> {	[          endash                      	]	}; // !!! added
     key <KPAD> {	[          emdash                      	]	}; // !!! added
+    key <AD03> {	[          e, E, eacute, Eacute        	]	}; // !!! added
 
     include "kpdl(comma)"
     include "level3(ralt_switch)"
