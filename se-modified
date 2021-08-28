@@ -194,7 +194,8 @@ xkb_symbols "mac" {
     key <AB08> {	[           comma,       semicolon     	]	};
     key <AB09> {	[          period,           colon     	]	};
     key <AB10> {	[           minus,      underscore     	]	};
-    key <KPMU> {	[        question,      exclam         	]	}; // !!! added
+    key <KPDV> {	[           slash,       backslash     	]	}; // !!! added
+    key <KPMU> {	[        question,          exclam     	]	}; // !!! added
     key <KPSU> {	[          endash                      	]	}; // !!! added
     key <KPAD> {	[          emdash                      	]	}; // !!! added
     key <AD03> {	[          e, E, eacute, Eacute        	]	}; // !!! added

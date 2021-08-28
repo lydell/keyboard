@@ -13,8 +13,9 @@
 ---
 >     // key <AD12> {	[       diaeresis,     asciicircum, 	asciitilde			]	}; // !!! original
 >     key <AD12> {	[rightsinglequotemark, asciicircum,      asciitilde	]	}; // !!! modified
-193a197,201
->     key <KPMU> {	[        question,      exclam         	]	}; // !!! added
+193a197,202
+>     key <KPDV> {	[           slash,       backslash     	]	}; // !!! added
+>     key <KPMU> {	[        question,          exclam     	]	}; // !!! added
 >     key <KPSU> {	[          endash                      	]	}; // !!! added
 >     key <KPAD> {	[          emdash                      	]	}; // !!! added
 >     key <AD03> {	[          e, E, eacute, Eacute        	]	}; // !!! added
