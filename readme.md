@@ -387,8 +387,7 @@ similar keyboard shortcuts. There’s a special mode for Windows that works with
 the standard sv-SE QWERTY layout _for PC._
 
 It’s possible to do everything I need in Ergodox EZ’s firmware, except a couple
-of things that are done via a custom Swedish layout for Mac (`Swedish -
-Custom.keylayout`) and by patching the “Swedish (Macintosh)” layout on Linux
+of things that are done via a custom Swedish layout for Mac (`Swedish - Custom.keylayout`), a custom Swedish layout for Windows (`Swedish - Custom.klc`), and by patching the “Swedish (Macintosh)” layout on Linux
 (`se.patch`). Having a custom Mac layout is nice anyway, since it also affects
 the MacBook laptop keyboard. These are the changes made:
 
@@ -408,15 +407,13 @@ the MacBook laptop keyboard. These are the changes made:
   swapped on Mac.)
 - On Linux: Make `altgr-e` into `é` and `altgr-shift-e` into `É`, so that the
   `é`/`É` key works.
+- On Windows: Similar shenanigans to Mac, but slightly different because of what
+  [Microsoft Keyboard Layout Creator] let me do. I don’t have any laptop keyboard
+  to take into account for Windows.
 
 Working around dead keys _can_ be done in the Ergodox EZ firmware, by using
 macros: Type the dead character followed by a space. But avoiding macros is more
-reliable, and makes the keys non-dead on the laptop keyboard. However, I _did_
-take this approach in the Windows mode, because I didn’t have the energy to
-create a custom Windows keyboard layout. (But maybe I should some day, because
-the `?`/`!` and `/`/`\` keys are not possible to do in firmware; as a workaround
-I have `?` and `/` keys but `!` and `\` in the function key layer. I don’t use
-Windows that much though.)
+reliable, and makes the keys non-dead on the laptop keyboard.
 
 There’s firmware for the Ergodox EZ in `ergodox-ez.hex` and a link to it in
 `ergodox-ez.url`. Go to that URL for installation instructions.
@@ -427,6 +424,13 @@ To install the custom macOS keyboard layout:
    (It was made using [Ukelele].)
 2. Log out and in again. (Possibly: Restart the computer.)
 3. Finally select the layout in System Preferences.
+
+To install the custom Windows keyboard layout:
+
+1. Download the zip file from the [Releases] page.
+   (It was made using [Microsoft Keyboard Layout Creator] – see the `Swedish - Custom.klc` file.)
+2. Unzip and run setup.exe.
+3. Add the “Svenska (Sverige) - Svensk - Custom” layout in Windows Settings.
 
 To patch the “Swedish (Macintosh)” layout on Linux:
 
@@ -458,6 +462,8 @@ To unpatch:
 [dual]: https://github.com/lydell/dual
 [gh-dr]: https://geekhack.org/index.php?topic=41685.0
 [Kinto.sh]: https://github.com/rbreaves/kinto
+[microsoft keyboard layout creator]: https://www.microsoft.com/en-us/download/details.aspx?id=102134
 [my-commit]: https://cgit.freedesktop.org/xkeyboard-config/commit/symbols/my?id=750db0173a8b25cfb169bb204d97daea393ce412
+[releases]: https://github.com/lydell/keyboard/releases
 [teck-programmer]: https://github.com/m-ou-se/teck-programmer
 [Ukelele]: https://software.sil.org/ukelele/
