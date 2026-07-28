@@ -1,9 +1,13 @@
 Overview
 ========
 
-This is my personal keyboard layout. It is made for the TECK (“Truly Ergonomic
-Keyboard”). There’s also a port for the Ergodox EZ. I hope it may be of
-inspiration to someone.
+This is my personal keyboard layout. I hope it may be of inspiration to someone.
+
+([How to read the diagrams.](diagrams.md))
+
+
+Truly Ergonomic Keyboard
+------------------------
 
 ```
 ins f1  f2  f3  f4    f5  f6  f7  f8    f9  f10 f11 f12 prt
@@ -16,7 +20,58 @@ tab═&══ >a  ]n  (i  )s  @v  del +b  4h  5t  6r  =o  |═══esc
             ↟↑                              ↡↓
 ```
 
-([How to read the above diagram.](diagrams.md))
+
+Ergodox EZ
+----------
+
+```
+win agr alt ctl sft sup tab      del sup sft ctl alt  å   men
+ ”“  <q  >l  {u  }c  *j   ↠        ↞  #k  7p  8m  9w  ^-_  ’‘
+tb& >a  ]n  (i  )s  @v               +b  4h  5t  6r  =o   |esc
+ ä  ~/\ `?! 'y  "g  —x   ↑        ↓  –z  1f  2d  3.: %,;   ö
+agr  ←   ↓   ↑   →  $e  ent      bs  0␣   ←   ↓   ↑   →   agr
+```
+
+
+CharaChorder
+------------
+
+(Not shown: Arrow keys and mouse keys.)
+
+```
+⎋   q       ⌥         ⌘         ⇧              ⇧         ⌘         ⌥       .:  k
+          l   n     u   i     c   s          h   p     t   m     r   w
+z   a       x         y         g              f         d         b       o   j
+
+
+                                ②              ②
+                              ⇥   e          ␣   v
+                                ⌫              ⏎
+
+                                ⌃              ⌃
+                              å   ä          ö   ”“
+                                ⌦              ≣
+
+                                ③              ③
+```
+
+```
+#   ^       ⌥         ⌘         ⇧              =         -         ,;      ?!  *
+          [   ]     {   }     (   )          4   7     5   8     6   9
+~   @       `         '’        "              1         2         3       +   %
+
+
+                                /\             <
+                              _   $          0   >
+                                &              |
+```
+
+```
+                                                                               f12
+                    🔉   🔊   🔅  🔆         f4  f7    f5  f8    f6  f9
+                       🔇                      f1        f2        f3      f11 f10
+
+```
 
 
 Concepts
